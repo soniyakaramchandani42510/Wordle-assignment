@@ -33,12 +33,6 @@ io.on('connection', (socket) => {
         console.log('data....',data)
         io.emit('chat-message', data);
     });
-
-    socket.on('feedback', (data) => {
-        console.log('feedback',feedback)
-        io.emit('feedback', data);
-    });
-
     socket.on('disconnect', () => {
         totalClients--;
         io.emit('clients-total', totalClients);

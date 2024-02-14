@@ -7,7 +7,7 @@ function App() {
     const [messages, setMessages] = useState([]);
     const [name, setName] = useState('anonymous(write your name..)');
     const [messageInput, setMessageInput] = useState('');
-    const[feedback,setFeedback]=useState('');
+
 
     useEffect(() => {
         const handleClientsTotal = (data) => {
@@ -25,12 +25,10 @@ function App() {
         // Here We Listen for events
         socket.on('clients-total', handleClientsTotal);
         socket.on('chat-message', handleChatMessage);
-        socket.on('feedback',handleFeedback)
         // Cleanup function to remove event listeners
         return () => {
             socket.off('clients-total', handleClientsTotal);
             socket.off('chat-message', handleChatMessage);
-            socket.off('feedback', handleFeedback);
         };
     }, [socket,messages]); 
     
