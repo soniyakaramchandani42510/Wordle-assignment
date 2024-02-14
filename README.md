@@ -1,6 +1,6 @@
 # Wordle Assignment
 
-This repository contains the source code for the Wordle Assignment, a web application that allows users to participate in a Wordle-like game and chat with other participants in real-time.
+This repository contains the source code for the Wordle Assignment, a web application that allows users to participate and chat with other user in real-time.
 
 ->first clone the repo (git clone git@github.com:soniyakaramchandani42510/Wordle-assignment.git)
 
