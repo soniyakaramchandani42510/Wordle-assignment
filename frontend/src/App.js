@@ -18,9 +18,7 @@ function App() {
             console.log('frontend data', data);
             setMessages((prevMessages) => [...prevMessages, data]);
         };
-        const handleFeedback=(data)=>{
-            setFeedback(data)
-        }
+        
     
         // Here We Listen for events
         socket.on('clients-total', handleClientsTotal);
