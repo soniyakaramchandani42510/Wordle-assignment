@@ -97,6 +97,7 @@ function App() {
                             color: message.name === name ? '#f6f6f6' : '#000'
                         }}>
                             <p className="message">{message.message}</p>
+                            <hr />
                             <span>{message.name} ● {message.dateTime}</span>
 
                         </li>
