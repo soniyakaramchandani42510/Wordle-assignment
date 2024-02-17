@@ -28,7 +28,7 @@ function App() {
             socket.off('clients-total', handleClientsTotal);
             socket.off('chat-message', handleChatMessage);
         };
-    }, [socket,messages]); 
+    }, [messages]); 
     
    
     const sendMessage = (e) => {
