@@ -1,43 +1,35 @@
 const express = require('express');
-const app = express();
-const http = require('http')
-const {Server}=require('socket.io')
-
-
-
+const http = require('http');
+const {Server} = require('socket.io');
 const cors = require('cors');
 
-app.use(cors())
+const app = express();
 const server = http.createServer(app);
 const io = new Server(server,{
     cors:{
-        origin:'https://wordle-assignment.netlify.app',
+        //
+        origin: ' https://wordle-assignment.netlify.app',
         methods:["GET","POST"]
     }
 })
 
 app.use(cors());
 
-let totalClients = 0;
-// io.on('connection',function(socket){
-//     console.log('hiii')
-//     socket.on('disconnect',function(){
-//         console.log('dis')
-//     })
-// })
+let totaluser = 0;
+
 io.on('connection', (socket) => {
-    totalClients++;
-    io.emit('clients-total', totalClients);
+    console.log("hello");
+    totaluser++;
+    io.emit('user-count', totaluser);
 
     socket.on('message', (data) => {
-        console.log('data....',data)
         io.emit('chat-message', data);
     });
+
     socket.on('disconnect', () => {
-        totalClients--;
-        io.emit('clients-total', totalClients);
+        totaluser--;
+        io.emit('user-count', totaluser);
     });
-    console.log("hello")
 });
 
 const PORT = 8000;
