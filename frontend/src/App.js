@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client'
 
-const socket = io.connect("http://localhost:8000");
+const socket = io.connect("https://wordle-assignment-id7k.onrender.com");
 function App() {
     const [totalClients, setTotalClients] = useState(0);
     const [messages, setMessages] = useState([]);
