@@ -11,7 +11,7 @@ app.use(cors())
 const server = http.createServer(app);
 const io = new Server(server,{
     cors:{
-        origin:'https://wordle-assignment.netlify.app/',
+        origin:'https://wordle-assignment.netlify.app',
         methods:["GET","POST"]
     }
 })
@@ -40,7 +40,7 @@ io.on('connection', (socket) => {
     console.log("hello")
 });
 
-const PORT =  8000;
+const PORT = 8000;
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
